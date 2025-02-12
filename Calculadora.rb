@@ -1,7 +1,7 @@
 while true
     print "Introduce el primer número (o escribe 'salir' para terminar): "
     input = gets.strip
-    break if input.downcase == "salir"  # Permitir salir del programa
+    break if input.downcase == "salir" 
     
     num1 = input.to_f
   
