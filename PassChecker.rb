@@ -1,13 +1,20 @@
+def is_password_weak(password)
+    input = File.open("passwords.txt", "r")
+    while (line = input.gets)
+        line.strip!
+        if password.include? line
+            return true
+        end
+    end 
+    return false
+end
 print "Instroduce la contraseña: "
-password = gets.strip 
+my_password = gets.strip 
 
-input = File.open("passwords.txt", "r")
-while (line = input.gets)
-    if line.strip == password
-        puts "La contraseña es débil"
-        exit
-    end
-end 
-puts "La contraseña es fuerte"
-input.close
+if is_password_weak(my_password)
+    puts "La contraseña es débil"
+else
+    puts "La contraseña es fuerte"
+end
+
 
